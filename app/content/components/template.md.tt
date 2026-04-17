@@ -1,0 +1,8 @@
+---
+name: <%= @title %>
+published_at: <%= Time.current %>
+---
+
+# <%= @name %>
+
+Start writing here…

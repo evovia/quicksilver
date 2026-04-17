@@ -1,0 +1,11 @@
+<h1>
+  Components
+</h1>
+
+<ul>
+  <% @resources.each do |resource| %>
+    <li>
+      <%= link_to resource.name, resource %>
+    </li>
+  <% end %>
+</ul>
