@@ -11,6 +11,7 @@ gem "tailwindcss-rails"
 gem "perron"
 gem "commonmarker"
 gem "rails_icons", "~> 1.8"
+gem "phlex-rails", "~> 2.4"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
@@ -23,3 +24,7 @@ end
 group :development do
   gem "standard", "~> 1.54"
 end
+
+gem "literal", "~> 1.9"
+
+gem "tailwind_merge", "~> 1.4"
