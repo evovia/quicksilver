@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  #
+  mount RailsIcons::Engine, at: "/rails_icons" if Rails.env.development?
 end
