@@ -1,3 +1,3 @@
 <article class="prose">
-  <%= markdownify @resource.content %>
+  <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
 </article>
