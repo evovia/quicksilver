@@ -13,6 +13,10 @@ Buttons already exist in HTML, so let's not make a component for them. Instead w
   end
 ```
 
+<button class="ui-button ui-button-primary">
+  Click me!
+</button>
+
 One of the upsides of affordances is, that we can now style other things as buttons as well. You want a link, that looks like a button? You got it.
 
 ```ruby
@@ -21,12 +25,19 @@ One of the upsides of affordances is, that we can now style other things as butt
   end
 ```
 
+<a href="#" class="ui-button ui-button-primary">
+  Click me!
+</a>
+
 What about a submit input? No problem.
 
 ```ruby
-  input type: "submit", class: "ui-button ui-button-primary" do
-    "Click me!"
-  end
+  input value: "Click me!",
+    type: "submit",
+    class: "ui-button ui-button-primary"
 ```
+
+<input type="submit" value="Click me!" class="ui-button ui-button-primary"></input>
+
 
 It all looks the same and it is easy to reason about.

@@ -1,2 +1,13 @@
+@layer base, affordances, utilities;
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@layer affordances {
+  .ui-button {
+    @apply px-2 py-1 no-underline text-sm font-medium text-slate-950 border border-slate-900 hover:bg-slate-900 hover:text-white;
+  }
+
+  .ui-button-primary {
+    @apply text-white border-indigo-500 bg-indigo-500 hover:bg-indigo-700 hover:border-indigo-700;
+  }
+}
