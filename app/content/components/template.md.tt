@@ -1,5 +1,6 @@
 ---
 name: <%= @title %>
+description:
 published_at: <%= Time.current %>
 ---
 

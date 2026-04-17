@@ -1,11 +1,12 @@
-<h1>
+<h1 class="text-4xl font-semibold leading-loose">
   Components
 </h1>
 
 <ul>
   <% @resources.each do |resource| %>
-    <li>
-      <%= link_to resource.name, resource %>
+    <li class="border rounded shadow p-4">
+      <%= link_to resource.name, resource, class: "text-lg font-medium text-teal-700 hover:text-teal-500" %>
+      <p><%= resource.description %></p>
     </li>
   <% end %>
 </ul>
