@@ -6,7 +6,7 @@ Perron.configure do |config|
   # config.mode = :standalone
 
   # Enable Live Reload with DOM Morphing in development
-  # config.live_reload = true
+  config.live_reload = true
 
   # config.default_url_options = {host: "chirpform.com", protocol: "https", trailing_slash: true}
 

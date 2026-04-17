@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <%= meta_tags %>
 
@@ -19,9 +19,15 @@
     <script defer src="https://cdn.jsdelivr.net/npm/attractivejs@latest"></script>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5">
-      <%= yield %>
-    </main>
+  <body class="h-full">
+    <%= render "navbar" %>
+
+    <div class="h-full flex">
+      <%= render "sidebar" %>
+
+      <main class="p-5">
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

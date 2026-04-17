@@ -10,4 +10,8 @@
   .ui-button-primary {
     @apply text-white border-indigo-500 bg-indigo-500 hover:bg-indigo-700 hover:border-indigo-700;
   }
+
+  .ui-link {
+    @apply underline text-slate-900 hover:text-indigo-500;
+  }
 }
