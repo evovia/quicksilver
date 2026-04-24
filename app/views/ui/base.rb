@@ -7,6 +7,8 @@ class UI::Base < Phlex::HTML
   include Phlex::Rails::Helpers::Routes
   include Phlex::Rails::Helpers::ClassNames
 
+  register_output_helper :icon
+
   if Rails.env.development?
     def before_template
       comment { "Before #{self.class.name}" }

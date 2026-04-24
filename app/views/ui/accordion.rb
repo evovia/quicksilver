@@ -26,6 +26,10 @@ class UI::Accordion < UI::Base
             span(class: "inline-flex items-center gap-2") do
               plain item[:heading]
             end
+
+            div(class: "text-gray-900") do
+              icon("chevron-down", variant: "outline", class: "size-3 block transition-all duration-300 group-open:rotate-180")
+            end
           end
           div(class: content_classes) do
             item[:block].call
@@ -59,9 +63,5 @@ class UI::Accordion < UI::Base
         "pb-1 px-1.5 text-xs": size.sm?
       ), content_class].join(" ")
     )
-  end
-
-  def icon_size
-    :lg
   end
 end
