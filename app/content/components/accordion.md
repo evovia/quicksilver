@@ -5,6 +5,7 @@ published_at: 2026-04-17 14:04:35 UTC
 ---
 
 # Accordion
+For folding stuff in and out. Or that music that is always used when Tour de France is on TV.
 
 <%= erbify do %>
   <%= render UI::Accordion.new do |accordion| 
@@ -19,4 +20,11 @@ published_at: 2026-04-17 14:04:35 UTC
       end
     end
   end %>
+<% end %>
+
+
+<%= erbify do %>
+  ```ruby
+    <%= implementation_of("accordion") %>
+  ```
 <% end %>
