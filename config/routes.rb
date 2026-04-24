@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pages, module: :content, only: %w[show]
+  root to: "content/pages#root"
   resources :components, module: :content, only: %w[index show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,6 +12,5 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  root "homes#index"
   mount RailsIcons::Engine, at: "/rails_icons" if Rails.env.development?
 end
