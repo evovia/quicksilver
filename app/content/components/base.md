@@ -10,6 +10,6 @@ This is the base class, all the Quicksilver components are based on. You can bui
 
 <%= erbify do %>
 ```ruby
-  <%= implementation_of("base") %>
+<%= implementation_of("base") %>
 ```
 <% end %>
