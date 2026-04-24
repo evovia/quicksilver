@@ -4,41 +4,12 @@ description: For folding stuff in and out. Or that music that is always used whe
 published_at: 2026-04-17 14:04:35 UTC
 ---
 
-<div class="not-prose">
-  <%= erbify do %>
-    <%= render UI::Accordion.new do |accordion| 
-      accordion.item(heading: "Item 1") do
-        content_tag :p do
-          "Content 1"
-        end
-      end
-      accordion.item(heading: "Item 2") do
-        content_tag :p do
-          "Content 2"
-        end
-      end
-    end %>
-  <% end %>
-</div>
-
-
-```ruby
-  <%= render UI::Accordion.new do |accordion| 
-    accordion.item(heading: "Item 1") do
-      content_tag :p do
-        "Content 1"
-      end
-    end
-    accordion.item(heading: "Item 2") do
-      content_tag :p do
-        "Content 2"
-      end
-    end
-  end %>
-  ```
+<%= erbify do %>
+  <%= render_component_preview("accordion") %>
+<% end %>
 
 <%= erbify do %>
-  ```ruby
-    <%= implementation_of("accordion") %>
-  ```
+```ruby
+  <%= implementation_of("accordion") %>
+```
 <% end %>
