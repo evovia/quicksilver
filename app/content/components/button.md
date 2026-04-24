@@ -12,9 +12,11 @@ Buttons already exist in HTML, so let's not make a component for them. Instead w
   end
 ```
 
-<button class="ui-button ui-button-primary">
-  Click me!
-</button>
+<div class="not-prose">
+  <button class="ui-button ui-button-primary">
+    Click me!
+  </button>
+</div>
 
 One of the upsides of affordances is, that we can now style other things as buttons as well. You want a link, that looks like a button? You got it.
 
@@ -24,9 +26,11 @@ One of the upsides of affordances is, that we can now style other things as butt
   end
 ```
 
-<a href="#" class="ui-button ui-button-primary">
-  Click me!
-</a>
+<div class="not-prose">
+  <a href="#" class="ui-button ui-button-primary">
+    Click me!
+  </a>
+</div>
 
 What about a submit input? No problem.
 
@@ -36,7 +40,8 @@ What about a submit input? No problem.
     class: "ui-button ui-button-primary"
 ```
 
-<input type="submit" value="Click me!" class="ui-button ui-button-primary"></input>
-
+<div class="not-prose">
+  <input type="submit" value="Click me!" class="ui-button ui-button-primary"></input>
+</div>
 
 It all looks the same and it is easy to reason about.
