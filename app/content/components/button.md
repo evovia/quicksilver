@@ -4,7 +4,6 @@ description: You need buttons in your app. This is how you get them.
 published_at: 2026-04-17 11:59:15 UTC
 ---
 
-# Button
 Buttons already exist in HTML, so let's not make a component for them. Instead we use [affordances](https://fractaledmind.com/2025/12/01/ui-affordances/) to make it simple to style them.
 
 ```ruby

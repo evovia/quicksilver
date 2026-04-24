@@ -14,4 +14,8 @@
   .ui-link {
     @apply underline text-slate-900 hover:text-indigo-500;
   }
+
+  .ui-display-2xl {
+    @apply text-5xl font-light leading-relaxed tracking-tight;
+  }
 }

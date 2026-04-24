@@ -4,6 +4,4 @@ description:
 published_at: <%= Time.current %>
 ---
 
-# <%= @title %>
-
 Start writing here…

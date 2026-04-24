@@ -1,3 +1,10 @@
-<article class="prose">
-  <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
+<article>
+  <hgroup class="mb-4">
+    <h1 class="ui-display-2xl"><%= @resource.name %></h1>
+    <p class="font-medium"><%= @resource.description %></p>
+  </hgroup>
+
+  <div class="prose">
+    <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
+  </div>
 </article>
