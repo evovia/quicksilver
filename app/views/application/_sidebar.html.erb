@@ -1,29 +1,40 @@
-<nav class="w-52">
-  <div class="px-4 py-2 border-r border-gray-200 h-full space-y-4">
-    <div>
-      <h5 class="font-medium text-lg">Getting started</h5>
+<nav class="w-52 h-full overflow-auto">
+  <div
+    class="
+      px-4 py-2 border-r border-gray-200 space-y-4 flex flex-col
+      justify-between h-full
+    "
+  >
+    <div class="space-y-4">
+      <div>
+        <h5 class="font-medium text-lg">Getting started</h5>
 
-      <menu>
-        <% Content::Page.all.reject(&:root?).each do |page| %>
-          <li>
-            <%= link_to page.title, page, class: "ui-link" %>
-          </li>
+        <menu>
+          <% Content::Page.all.reject(&:root?).each do |page| %>
+            <li>
+              <%= link_to page.title, page, class: "ui-link" %>
+            </li>
+          <% end %>
+        </menu>
+      </div>
+
+      <div>
+        <%= link_to components_path do %>
+          <h5 class="font-medium text-lg">Components</h5>
         <% end %>
-      </menu>
+
+        <menu>
+          <% Content::Component.all.each do |component| %>
+            <li>
+              <%= link_to component.name, component, class: "ui-link" %>
+            </li>
+          <% end %>
+        </menu>
+      </div>
     </div>
 
     <div>
-      <%= link_to components_path do %>
-        <h5 class="font-medium text-lg">Components</h5>
-      <% end %>
-
-      <menu>
-        <% Content::Component.all.each do |component| %>
-          <li>
-            <%= link_to component.name, component, class: "ui-link" %>
-          </li>
-        <% end %>
-      </menu>
+      <%= image_tag "logo_green.svg", alt: "Evovia logo" %>
     </div>
   </div>
 </nav>
