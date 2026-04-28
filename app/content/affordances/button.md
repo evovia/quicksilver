@@ -50,7 +50,7 @@ It all looks the same and it is easy to reason about.
 
 <%= erbify do %>
   <section class="space-y-6 prose">
-    <%= render_affordance_previews("button") %>
+    <%= render_previews("button", variant: :affordance) %>
   </section>
 <% end %>
 
