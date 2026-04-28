@@ -3,6 +3,7 @@
 @import "./typography.css" layer(affordances);
 @import "./button.css" layer(affordances);
 @import "./link.css" layer(affordances);
+@import "./alert.css" layer(affordances);
 @plugin "@tailwindcss/typography";
 
 @theme {
