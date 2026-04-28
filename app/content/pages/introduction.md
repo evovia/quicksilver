@@ -1,5 +1,6 @@
 ---
 title: Introduction
+position: 1
 ---
 
 ## Why have you done this?

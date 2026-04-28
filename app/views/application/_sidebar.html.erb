@@ -10,7 +10,7 @@
         <h5 class="font-medium text-lg">Getting started</h5>
 
         <menu>
-          <% Content::Page.all.reject(&:root?).each do |item| %>
+          <% Content::Page.all.reject(&:root?).sort_by(&:position).each do |item| %>
             <li>
               <%= link_to item.title, item, class: "ui-link" %>
             </li>

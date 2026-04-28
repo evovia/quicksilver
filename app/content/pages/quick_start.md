@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+position: 2
 ---
 
 Deviate from these instructions as you wish or want, but these dependencies have proven quite nice at our end.

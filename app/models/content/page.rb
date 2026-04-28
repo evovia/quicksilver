@@ -1,3 +1,3 @@
 class Content::Page < Perron::Resource
-  delegate :title, to: :metadata
+  delegate :title, :position, to: :metadata
 end
