@@ -7,9 +7,7 @@ published_at: 2026-04-17 11:59:15 UTC
 ## Examples
 
 <%= erbify do %>
-  <section class="space-y-6 prose">
-    <%= render_previews("link", variant: :affordance) %>
-  </section>
+  <%= render_previews("link", variant: :affordance) %>
 <% end %>
 
 ## Implementation

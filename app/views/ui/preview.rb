@@ -24,7 +24,7 @@ class UI::Preview < UI::Base
   def view_template(&block)
     vanish(&block) if block_given?
 
-    div(data_controller: "tabs", data_tabs_active_value: "preview") do
+    div(data_controller: "tabs", data_tabs_active_value: "preview", class: "mb-6") do
       div(class: class_names("not-prose flex items-center mb-2", "justify-between": heading?, "justify-end": !heading?)) do
         h2(class: "ui-heading-md") { heading } if heading?
         menu(class: "flex items-center justify-end p-1 border border-gray-200 rounded-full gap-2") do

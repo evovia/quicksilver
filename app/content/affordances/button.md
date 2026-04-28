@@ -49,9 +49,7 @@ It all looks the same and it is easy to reason about.
 ## Examples
 
 <%= erbify do %>
-  <section class="space-y-6 prose">
-    <%= render_previews("button", variant: :affordance) %>
-  </section>
+  <%= render_previews("button", variant: :affordance) %>
 <% end %>
 
 ## Implementation

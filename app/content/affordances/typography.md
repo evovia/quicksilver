@@ -4,9 +4,7 @@ description: You probably need to display some text. Bold, thin, small or large.
 ---
 
 <%= erbify do %>
-  <section class="space-y-6 prose">
-    <%= render_previews("typography", variant: :affordance) %>
-  </section>
+  <%= render_previews("typography", variant: :affordance) %>
 <% end %>
 
 ## Implementation
