@@ -54,7 +54,7 @@
 
 @layer affordances {
   .ui-button {
-    @apply px-2 py-1 no-underline text-sm font-medium text-gray-950 border border-gray-900 hover:bg-gray-900 hover:text-white;
+    @apply max-w-fit block px-2 py-1 no-underline text-sm font-medium text-gray-950 border border-gray-900 hover:bg-gray-900 hover:text-white;
   }
 
   .ui-button-primary {
