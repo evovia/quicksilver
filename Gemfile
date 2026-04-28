@@ -28,3 +28,7 @@ end
 gem "literal", "~> 1.9"
 
 gem "tailwind_merge", "~> 1.4"
+
+gem "importmap-rails", "~> 2.2"
+
+gem "stimulus-rails", "~> 1.3"
