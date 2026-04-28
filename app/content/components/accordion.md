@@ -8,6 +8,8 @@ published_at: 2026-04-17 14:04:35 UTC
   <%= render_component_preview("accordion") %>
 <% end %>
 
+## Implementation
+
 <%= erbify do %>
 ```ruby
 <%= render_component_implementation("accordion") %>

@@ -1,8 +1,8 @@
 @layer base, affordances, utilities;
 @import "tailwindcss";
 @import "./typography.css" layer(affordances);
-@import "./buttons.css" layer(affordances);
-@import "./links.css" layer(affordances);
+@import "./button.css" layer(affordances);
+@import "./link.css" layer(affordances);
 @plugin "@tailwindcss/typography";
 
 @theme {

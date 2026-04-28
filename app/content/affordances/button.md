@@ -53,3 +53,11 @@ It all looks the same and it is easy to reason about.
     <%= render_affordance_previews("button") %>
   </section>
 <% end %>
+
+## Implementation
+
+<%= erbify do %>
+  ```css
+  <%= render_affordance_implementation("button") %>
+  ```
+<% end %>

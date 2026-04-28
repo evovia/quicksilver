@@ -8,3 +8,11 @@ description: You probably need to display some text. Bold, thin, small or large.
     <%= render_affordance_previews("typography") %>
   </section>
 <% end %>
+
+## Implementation
+
+<%= erbify do %>
+  ```css
+  <%= render_affordance_implementation("typography") %>
+  ```
+<% end %>

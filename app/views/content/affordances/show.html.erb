@@ -5,6 +5,6 @@
   </hgroup>
 
   <section class="prose">
-    <%= markdownify @resource.content %>
+    <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
   </section>
 </article>

@@ -13,6 +13,10 @@ module ApplicationHelper
     end
   end
 
+  def render_affordance_implementation(name)
+    File.read(Rails.root.join("app/assets/tailwind/#{name}.css")).html_safe
+  end
+
   def render_affordance_previews(name, items: nil)
     items ||= Content::Data.const_get(name.classify.pluralize).all
     preview_class = "Previews::#{name.classify}".constantize
