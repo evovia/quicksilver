@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def implementation_of(name)
+  def render_component_implementation(name)
     File.read(Rails.root.join("app/views/ui/#{name}.rb")).html_safe
   end
 

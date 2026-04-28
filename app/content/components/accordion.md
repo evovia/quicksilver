@@ -10,6 +10,6 @@ published_at: 2026-04-17 14:04:35 UTC
 
 <%= erbify do %>
 ```ruby
-<%= implementation_of("accordion") %>
+<%= render_component_implementation("accordion") %>
 ```
 <% end %>
