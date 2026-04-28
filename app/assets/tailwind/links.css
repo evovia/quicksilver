@@ -1,0 +1,23 @@
+.ui-link {
+  @apply underline text-sm text-gray-900 hover:text-brand-turqoise-500;
+}
+
+.ui-link-danger {
+  @apply text-brand-red-600 hover:text-brand-red-700 active:text-brand-red-800;
+}
+
+.ui-link-primary {
+  @apply text-brand-turqoise-600 hover:text-brand-turqoise-700 active:text-brand-turqoise-800;
+}
+
+.ui-link-lg {
+  @apply text-base;
+}
+
+.ui-link-md {
+  @apply text-sm;
+}
+
+.ui-link-sm {
+  @apply text-xs;
+}
