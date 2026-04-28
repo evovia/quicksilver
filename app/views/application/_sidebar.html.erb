@@ -12,7 +12,7 @@
         <menu>
           <% Content::Page.all.reject(&:root?).sort_by(&:position).each do |item| %>
             <li>
-              <%= link_to item.title, item, class: "ui-link" %>
+              <%= link_to item.title, item, class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item)) %>
             </li>
           <% end %>
         </menu>
@@ -24,7 +24,7 @@
         <menu>
           <% Content::Affordance.all.each do |item| %>
             <li>
-              <%= link_to item.title, item, class: "ui-link" %>
+              <%= link_to item.title, item, class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item)) %>
             </li>
           <% end %>
         </menu>
@@ -36,7 +36,7 @@
         <menu>
           <% Content::Component.all.each do |item| %>
             <li>
-              <%= link_to item.name, item, class: "ui-link" %>
+              <%= link_to item.name, item, class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item)) %>
             </li>
           <% end %>
         </menu>
