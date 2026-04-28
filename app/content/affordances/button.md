@@ -45,3 +45,11 @@ input value: "Click me!",
 </div>
 
 It all looks the same and it is easy to reason about.
+
+## Examples
+
+<%= erbify do %>
+  <section class="space-y-6 prose">
+    <%= render_affordance_previews("button") %>
+  </section>
+<% end %>

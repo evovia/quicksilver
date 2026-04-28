@@ -1,6 +1,7 @@
 @layer base, affordances, utilities;
 @import "tailwindcss";
 @import "./typography.css" layer(affordances);
+@import "./buttons.css" layer(affordances);
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -54,14 +55,6 @@
 }
 
 @layer affordances {
-  .ui-button {
-    @apply max-w-fit block px-2 py-1 no-underline text-sm font-medium text-gray-950 border border-gray-900 hover:bg-gray-900 hover:text-white;
-  }
-
-  .ui-button-primary {
-    @apply text-white border-brand-turqoise-500 bg-brand-turqoise-500 hover:bg-brand-turqoise-700 hover:border-brand-turqoise-700;
-  }
-
   .ui-link {
     @apply underline text-gray-900 hover:text-brand-turqoise-500;
   }

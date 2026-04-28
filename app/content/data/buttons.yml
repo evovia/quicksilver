@@ -1,0 +1,44 @@
+- ui-button:
+  name: Default
+  classes: ui-button
+  text: Click Me!
+
+- ui-button-primary:
+  name: Primary
+  classes: ui-button ui-button-primary
+  text: Click Me!
+
+- ui-button-secondary:
+  name: Secondary
+  classes: ui-button ui-button-secondary
+  text: Click Me!
+
+- ui-button-warning:
+  name: Warning
+  classes: ui-button ui-button-warning
+  text: Click Me!
+
+- ui-button-danger:
+  name: Danger
+  classes: ui-button ui-button-danger
+  text: Click Me!
+
+- ui-button-lg:
+  name: Large
+  classes: ui-button ui-button-lg
+  text: Click Me!
+
+- ui-button-md:
+  name: Medium
+  classes: ui-button ui-button-md
+  text: Click Me!
+
+- ui-button-sm:
+  name: Small
+  classes: ui-button ui-button-sm
+  text: Click Me!
+
+- ui-button-xs:
+  name: Extra small
+  classes: ui-button ui-button-xs
+  text: Click Me!

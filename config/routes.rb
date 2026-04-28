@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :affordances, module: :content, only: %w[show]
   resources :pages, module: :content, only: %w[show]
   root to: "content/pages#root"
-  resources :components, module: :content, only: %w[index show]
+  resources :components, module: :content, only: %w[show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
