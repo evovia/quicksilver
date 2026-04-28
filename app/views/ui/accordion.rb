@@ -28,7 +28,7 @@ class UI::Accordion < UI::Base
             end
 
             div(class: "text-gray-900") do
-              icon("chevron-down", variant: "outline", class: "size-3 block transition-all duration-300 group-open:rotate-180")
+              render Icon(name: :chevron_down, variant: "outline", class: "size-3 block transition-all duration-300 group-open:rotate-180")
             end
           end
           div(class: content_classes) do

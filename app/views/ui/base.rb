@@ -8,8 +8,6 @@ class UI::Base < Phlex::HTML
   include Phlex::Rails::Helpers::ClassNames
   include Phlex::Rails::Helpers::LinkTo
 
-  register_output_helper :icon
-
   if Rails.env.development?
     def before_template
       comment { "Before #{self.class.name}" }
