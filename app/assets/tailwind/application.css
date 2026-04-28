@@ -1,5 +1,6 @@
 @layer base, affordances, utilities;
 @import "tailwindcss";
+@import "./typography.css" layer(affordances);
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -63,9 +64,5 @@
 
   .ui-link {
     @apply underline text-gray-900 hover:text-brand-turqoise-500;
-  }
-
-  .ui-display-2xl {
-    @apply text-5xl font-light leading-relaxed tracking-tight;
   }
 }

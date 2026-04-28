@@ -10,9 +10,21 @@
         <h5 class="font-medium text-lg">Getting started</h5>
 
         <menu>
-          <% Content::Page.all.reject(&:root?).each do |page| %>
+          <% Content::Page.all.reject(&:root?).each do |item| %>
             <li>
-              <%= link_to page.title, page, class: "ui-link" %>
+              <%= link_to item.title, item, class: "ui-link" %>
+            </li>
+          <% end %>
+        </menu>
+      </div>
+
+      <div>
+        <h5 class="font-medium text-lg">Content</h5>
+
+        <menu>
+          <% Content::Content.all.each do |item| %>
+            <li>
+              <%= link_to item.title, item, class: "ui-link" %>
             </li>
           <% end %>
         </menu>
@@ -24,9 +36,9 @@
         <% end %>
 
         <menu>
-          <% Content::Component.all.each do |component| %>
+          <% Content::Component.all.each do |item| %>
             <li>
-              <%= link_to component.name, component, class: "ui-link" %>
+              <%= link_to item.name, item, class: "ui-link" %>
             </li>
           <% end %>
         </menu>

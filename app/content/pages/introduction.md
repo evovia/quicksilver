@@ -10,6 +10,15 @@ The app has grown a lot in the past 12 years. We do not want to redo the whole a
 ## The solution - Tailwind, Phlex and affordances
 Write about this at length
 
+## What's in the box?
+Components and affordances.
+
+The components are focused on building a proper semantic markup. They are not straight copies from Evovia, but are instead styled as simply as possible. There might be a few Stimulus controllers needed to get the proper behaviour.
+
+The affordances are also defined as simply as possible. They represent the classes we found we needed, when redesigning our app.
+
+Both are to be seen as starting points. You can copy everything into your app and build your UI with it, but you probably want to tweak it to make it all match your brand.
+
 ## Why not ViewComponent
 No caching, but feature complete
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contents, module: :content, only: %w[show]
   resources :pages, module: :content, only: %w[show]
   root to: "content/pages#root"
   resources :components, module: :content, only: %w[index show]

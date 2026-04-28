@@ -6,6 +6,7 @@ class UI::Base < Phlex::HTML
   extend Literal::Properties
   include Phlex::Rails::Helpers::Routes
   include Phlex::Rails::Helpers::ClassNames
+  include Phlex::Rails::Helpers::LinkTo
 
   register_output_helper :icon
 

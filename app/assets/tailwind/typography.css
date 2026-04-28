@@ -1,0 +1,4 @@
+/* Typography */
+.ui-display-2xl {
+  @apply text-5xl font-light leading-relaxed tracking-tight;
+}

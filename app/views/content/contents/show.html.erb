@@ -1,0 +1,28 @@
+<article>
+  <hgroup class="mb-4">
+    <h1 class="ui-display-2xl"><%= @resource.title %></h1>
+    <p class="font-medium"><%= @resource.description %></p>
+  </hgroup>
+
+  <section class="space-y-6 prose">
+    <% Content::Data::Typographies.all.each do |typography| %>
+      <div
+        class="
+          prose-ul:p-0 prose-ul:m-0 prose-li:p-0 prose-li:m-0
+          prose-ul:leading-none prose-pre:my-0 prose-pre:bg-[#2b303b]
+        "
+      >
+        <% preview_component = Previews::Typography.new(name: typography.name, text: typography.text) %>
+
+        <%= render UI::Preview.new(heading: typography.name, variant: :affordance) do |preview| %>
+          <%= preview.preview { render preview_component } %>
+          <%= preview.code { preview_component.to_code } %>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+
+  <section class="prose">
+    <%# = markdownify @resource.content %>
+  </section>
+</article>
