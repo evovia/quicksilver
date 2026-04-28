@@ -1,6 +1,7 @@
 class Previews::Base < Phlex::HTML
   def self.scenarios
-    public_instance_methods(false)
+    source = File.read(Object.const_source_location(name).first)
+    source.scan(/^\s*def (\w+)/).flatten.map(&:to_sym) & public_instance_methods(false)
   end
 
   def with_scenario(scenario)
