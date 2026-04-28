@@ -22,7 +22,7 @@
         <h5 class="font-medium text-lg">Content</h5>
 
         <menu>
-          <% Content::Content.all.each do |item| %>
+          <% Content::Affordance.all.each do |item| %>
             <li>
               <%= link_to item.title, item, class: "ui-link" %>
             </li>
