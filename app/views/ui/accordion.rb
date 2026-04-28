@@ -27,7 +27,7 @@ class UI::Accordion < UI::Base
               plain item[:heading]
             end
 
-            div(class: "text-gray-900") do
+            div(class: "text-gray-900", aria_hidden: "true") do
               render Icon(name: :chevron_down, variant: "outline", class: "size-3 block transition-all duration-300 group-open:rotate-180")
             end
           end

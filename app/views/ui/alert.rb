@@ -15,14 +15,14 @@ class UI::Alert < UI::Base
   prop :dismissable, _Boolean, default: false, predicate: :private, reader: :private
 
   def view_template
-    div(class: classes, data: data_with_defaults, role: :alert) do
-      render Icon(name: icon, size:, class: "shrink-0 mt-1 #{icon_color_classes}") if icon?
+    div(class: classes, data: data_with_defaults, role: alert_role) do
+      render Icon(name: icon, size:, class: "shrink-0 mt-1 #{icon_color_classes}", aria_hidden: "true") if icon?
       div(class: "w-full") do
         div(class: "flex items-center justify-between gap-2") do
           h5(class: heading_classes) { heading }
 
           if dismissable?
-            button data: {action: "dismissable#dismiss"} do
+            button aria_label: "Dismiss", data: {action: "dismissable#dismiss"} do
               render UI::Icon.new(name: :x_mark, size:, class: "cursor-pointer #{icon_color_classes}")
             end
           end
@@ -76,5 +76,9 @@ class UI::Alert < UI::Base
     data.with_defaults(
       dismissable? ? {controller: "dismissable"} : {}
     )
+  end
+
+  def alert_role
+    (variant.warning? || variant.danger?) ? :alert : :status
   end
 end
