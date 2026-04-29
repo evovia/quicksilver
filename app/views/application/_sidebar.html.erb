@@ -6,41 +6,21 @@
     "
   >
     <div class="space-y-4">
-      <div>
-        <h5 class="font-medium text-lg">Getting started</h5>
+      <%= render Sidebar::Category.new(
+        heading: "Getting started",
+        items: Content::Page.all.reject(&:root?).sort_by(&:position)
+      ) %>
 
-        <menu>
-          <% Content::Page.all.reject(&:root?).sort_by(&:position).each do |item| %>
-            <li>
-              <%= link_to item.title, item, class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item)) %>
-            </li>
-          <% end %>
-        </menu>
-      </div>
+      <%= render Sidebar::Category.new(
+        heading: "Affordances",
+        items: Content::Affordance.all
+      ) %>
 
-      <div>
-        <h5 class="font-medium text-lg">Affordances</h5>
-
-        <menu>
-          <% Content::Affordance.all.each do |item| %>
-            <li>
-              <%= link_to item.title, item, class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item)) %>
-            </li>
-          <% end %>
-        </menu>
-      </div>
-
-      <div>
-        <h5 class="font-medium text-lg">Components</h5>
-
-        <menu>
-          <% Content::Component.all.each do |item| %>
-            <li>
-              <%= link_to item.name, item, class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item)) %>
-            </li>
-          <% end %>
-        </menu>
-      </div>
+      <%= render Sidebar::Category.new(
+        heading: "Components",
+        items: Content::Component.all,
+        text_method: :name
+      ) %>
     </div>
 
     <div>
