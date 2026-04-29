@@ -1,0 +1,27 @@
+.ui-badge {
+  @apply inline-flex justify-start items-center min-w-fit max-w-fit gap-1 px-2 py-0.5 text-xs bg-gray-50 rounded-sm ring ring-gray-600;
+}
+
+.ui-badge-neutral {
+  @apply text-gray-900 bg-gray-50 ring-gray-600;
+}
+
+.ui-badge-brand {
+  @apply text-brand-turqoise-900 bg-brand-turqoise-100 ring-brand-turqoise-200;
+}
+
+.ui-badge-danger {
+  @apply text-red-700 bg-red-50 ring-red-700;
+}
+
+.ui-badge-sm {
+  @apply px-2 py-0.5 text-xs;
+}
+
+.ui-badge-md {
+  @apply px-2.5 py-0.5 text-sm font-medium leading-5;
+}
+
+.ui-badge-lg {
+  @apply px-3 py-1 text-sm font-medium leading-5;
+}

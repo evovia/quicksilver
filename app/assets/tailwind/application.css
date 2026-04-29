@@ -5,6 +5,7 @@
 @import "./link.css" layer(affordances);
 @import "./alert.css" layer(affordances);
 @import "./form.css" layer(affordances);
+@import "./badge.css" layer(affordances);
 @plugin "@tailwindcss/typography";
 
 @theme {
