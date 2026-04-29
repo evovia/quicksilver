@@ -28,4 +28,8 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
   def hint(method, text = nil, options = {}, &block)
     render Form::Hint.new(form: self, method:, text:, **options)
   end
+
+  def error(method, text = nil, options = {}, &block)
+    render Form::Error.new(form: self, method:, text:, **options)
+  end
 end

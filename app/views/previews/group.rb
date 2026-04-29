@@ -16,4 +16,13 @@ class Previews::Group < Previews::Base
       form.group :name, hint: "This is a hint"
     end
   end
+
+  def with_errors
+    user = DummyUser.new(name: "Jonathan Doe")
+    user.errors.add(:name, :invalid)
+
+    app_form_with url: "#", model: user do |form|
+      form.group :name
+    end
+  end
 end

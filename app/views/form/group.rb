@@ -7,10 +7,14 @@ class Form::Group < UI::Base
   prop :options, Hash, :**, reader: :private
 
   def view_template
-    div(class: classes) do
+    div(class: classes, **data_attributes) do
       render_field
 
       div(class: "space-y-0.5") do
+        errors.each do |error|
+          render Form::Error.new(form:, method:, text: error, **error_options)
+        end
+
         render Form::Hint.new(form:, method:, text: hint_text, **hint_options) if hint?
       end
     end
@@ -32,6 +36,28 @@ class Form::Group < UI::Base
 
   def input_options
     options.slice(*input_class.allowed_options)
+  end
+
+  def error?
+    return false if form.object.blank?
+
+    form.object.errors.where(method).any?
+  end
+
+  def errors
+    return [] unless error?
+
+    form.object.errors.where(method).map(&:full_message)
+  end
+
+  def error_options
+    options[:error_options] || {}
+  end
+
+  def data_attributes
+    return {} unless error?
+
+    {data: {invalid: true}}
   end
 
   def hint_text
