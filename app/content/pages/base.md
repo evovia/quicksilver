@@ -1,5 +1,5 @@
 ---
-title: Base component
+title: Base components
 position: 3
 ---
 
@@ -10,5 +10,20 @@ This is the base class, all the Quicksilver components are based on. You can bui
 <%= erbify do %>
 ```ruby
 <%= render_component_implementation("base") %>
+```
+<% end %>
+
+## Form base components
+Our form components rely on methods from their parents. You can copy them here.
+
+<%= erbify do %>
+```ruby
+<%= render_form_implementation("base_tag") %>
+```
+<% end %>
+
+<%= erbify do %>
+```ruby
+<%= render_form_implementation("input") %>
 ```
 <% end %>

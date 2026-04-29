@@ -7,6 +7,10 @@ module ApplicationHelper
     File.read(Rails.root.join("app/assets/tailwind/#{name}.css")).html_safe
   end
 
+  def render_form_implementation(name)
+    File.read(Rails.root.join("app/views/form/#{name}.rb")).html_safe
+  end
+
   def render_previews(name, variant: :component)
     preview_class = "Previews::#{name.classify}".constantize
 

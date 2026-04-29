@@ -4,6 +4,6 @@
   </h1>
 
   <section class="prose">
-    <%= markdownify @resource.content %>
+    <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
   </section>
 </article>
