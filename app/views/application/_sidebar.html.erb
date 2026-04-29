@@ -21,6 +21,11 @@
         items: Content::Component.all,
         text_method: :name
       ) %>
+
+      <%= render Sidebar::Category.new(
+        heading: "Forms",
+        items: Content::Form.all.sort_by(&:position)
+      ) %>
     </div>
 
     <div>

@@ -4,6 +4,7 @@
 @import "./button.css" layer(affordances);
 @import "./link.css" layer(affordances);
 @import "./alert.css" layer(affordances);
+@import "./form.css" layer(affordances);
 @plugin "@tailwindcss/typography";
 
 @theme {

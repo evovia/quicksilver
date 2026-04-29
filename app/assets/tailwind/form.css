@@ -1,0 +1,11 @@
+.ui-form-control {
+  @apply ring ring-gray-800 px-2 py-1 rounded-sm max-w-fit focus:outline-2 focus:outline-gray-900;
+}
+
+.ui-form-label {
+  @apply font-medium text-sm text-gray-900;
+}
+
+.ui-form-hint {
+  @apply text-sm text-gray-800;
+}
