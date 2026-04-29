@@ -32,4 +32,8 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
   def error(method, text = nil, options = {}, &block)
     render Form::Error.new(form: self, method:, text:, **options)
   end
+
+  def submit(value = nil, options = {})
+    super(value, options.with_defaults(class: "ui-button ui-button-primary"))
+  end
 end
