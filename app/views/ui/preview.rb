@@ -33,7 +33,7 @@ class UI::Preview < UI::Base
         end
       end
 
-      div(class: "border border-gray-200 rounded-lg overflow-hidden") do
+      div(class: "border border-gray-200 rounded-lg") do
         div(role: "tabpanel", id: "#{panel_id}-preview", aria_labelledby: "#{panel_id}-preview-tab", data_tabs_target: "panel", data_tab: "preview", class: "flex not-prose #{variant_config[:li_class]}") do
           if variant_config[:wrapper_class]
             div(class: variant_config[:wrapper_class]) { @preview_block.call }
