@@ -1,0 +1,43 @@
+  .ui-modal {
+    @apply absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 min-w-sm max-w-xl w-full shadow-xl ring ring-gray-300 bg-white backdrop:bg-gray-800/50;
+  }
+
+  dialog.ui-modal:not([open]) {
+    @apply hidden;
+  }
+
+  .ui-modal-body {
+    @apply p-4;
+  }
+
+  .ui-modal-footer {
+    @apply border-t border-gray-300 p-6;
+  }
+
+  @keyframes ui-fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ui-fade-out {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  dialog[data-modal-target="dialog"][open] {
+    animation: ui-fade-in 200ms forwards;
+  }
+
+  dialog[data-modal-target="dialog"][closing] {
+    animation: ui-fade-out 200ms forwards;
+  }
