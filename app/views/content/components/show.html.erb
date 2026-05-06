@@ -4,6 +4,10 @@
     <p class="font-medium"><%= @resource.description %></p>
   </hgroup>
 
+  <div class="not-prose mb-6">
+    <%= render CopyCommand.new(command: "bin/rails g quicksilver_ui:component #{@resource.name}") %>
+  </div>
+
   <div class="prose">
     <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
   </div>
