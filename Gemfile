@@ -25,6 +25,8 @@ group :development do
   gem "standard", "~> 1.54"
 end
 
+gem "quicksilver_ui", path: "quicksilver-ui"
+
 gem "literal", "~> 1.9"
 
 gem "tailwind_merge", "~> 1.4"

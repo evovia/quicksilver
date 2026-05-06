@@ -1,6 +1,6 @@
 module ApplicationHelper
   def render_component_implementation(name)
-    File.read(Rails.root.join("app/views/ui/#{name}.rb")).html_safe
+    File.read(QuicksilverUI.ui_path.join("#{name}.rb")).html_safe
   end
 
   def render_affordance_implementation(name)

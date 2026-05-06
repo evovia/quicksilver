@@ -1,0 +1,19 @@
+.ui-form-control {
+  @apply ring ring-gray-800 px-2 py-1 rounded-sm max-w-fit focus:outline-2 focus:outline-gray-900;
+
+  [data-invalid] & {
+    @apply text-red-500 ring-red-500 focus:outline-red-500;
+  }
+}
+
+.ui-form-label {
+  @apply font-medium text-sm text-gray-900;
+}
+
+.ui-form-hint {
+  @apply text-sm text-gray-800;
+}
+
+.ui-form-error {
+  @apply text-sm font-medium text-red-600;
+}
