@@ -8,6 +8,11 @@ module QuicksilverUI
 
     initializer "quicksilver_ui.assets" do |app|
       app.config.assets.paths << QuicksilverUI.stylesheets_path.to_s
+      app.config.assets.paths << root.join("app/javascript").to_s
+    end
+
+    initializer "quicksilver_ui.importmap", before: "importmap" do |app|
+      app.config.importmap.paths << root.join("config/importmap.rb")
     end
   end
 end
