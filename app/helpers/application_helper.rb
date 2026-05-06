@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def render_form_implementation(name)
-    File.read(Rails.root.join("app/views/form/#{name}.rb")).html_safe
+    File.read(QuicksilverUI.form_path.join("#{name}.rb")).html_safe
   end
 
   def render_previews(name, variant: :component)

@@ -14,6 +14,14 @@ module QuicksilverUI
       root.join("app", "views", "ui")
     end
 
+    def form_path
+      root.join("app", "views", "form")
+    end
+
+    def helpers_path
+      root.join("app", "helpers")
+    end
+
     def stylesheets_path
       root.join("app", "assets", "tailwind")
     end

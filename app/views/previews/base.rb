@@ -1,6 +1,6 @@
 class Previews::Base < Phlex::HTML
   include Phlex::Rails::Helpers::FormWith
-  include AppFormHelper
+  include ::AppFormHelper
 
   def self.scenarios
     source = File.read(Object.const_source_location(name).first)
