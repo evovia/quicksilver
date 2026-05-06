@@ -6,43 +6,50 @@ module QuicksilverUI
       components: %w[icon],
       stylesheets: [],
       controllers: [],
-      mixins: []
+      mixins: [],
+      gems: []
     },
     "alert" => {
       components: %w[icon],
       stylesheets: %w[alert],
       controllers: %w[dismissable],
-      mixins: []
+      mixins: [],
+      gems: []
     },
     "avatar" => {
       components: [],
       stylesheets: [],
       controllers: [],
-      mixins: []
+      mixins: [],
+      gems: []
     },
     "badge" => {
       components: %w[icon],
       stylesheets: %w[badge],
       controllers: [],
-      mixins: []
+      mixins: [],
+      gems: []
     },
     "dropdown" => {
       components: %w[icon],
       stylesheets: [],
       controllers: %w[dropdown],
-      mixins: %w[use_floating_ui]
+      mixins: %w[use_floating_ui],
+      gems: []
     },
     "icon" => {
       components: [],
       stylesheets: [],
       controllers: [],
-      mixins: []
+      mixins: [],
+      gems: %w[rails_icons]
     },
     "modal" => {
       components: %w[icon],
       stylesheets: %w[modal],
       controllers: %w[modal],
-      mixins: []
+      mixins: [],
+      gems: []
     }
   }.freeze
 

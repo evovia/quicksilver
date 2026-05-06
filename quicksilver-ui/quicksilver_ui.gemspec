@@ -18,9 +18,4 @@ Gem::Specification.new do |spec|
   ]
 
   spec.require_paths = ["lib"]
-
-  spec.add_dependency "phlex-rails", "~> 2.0"
-  spec.add_dependency "literal", "~> 1.0"
-  spec.add_dependency "tailwind_merge", "~> 1.0"
-  spec.add_dependency "rails_icons", "~> 1.0"
 end

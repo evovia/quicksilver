@@ -24,6 +24,15 @@ module QuicksilverUI
         say "Generating #{component_name} component..."
       end
 
+      def add_gems
+        all_gems.each do |gem_name|
+          unless gem_installed?(gem_name)
+            say "Adding #{gem_name} to Gemfile...", :yellow
+            run "bundle add #{gem_name}"
+          end
+        end
+      end
+
       def copy_component_files
         all_components.each do |name|
           paths = file_paths_for(name)
@@ -39,7 +48,9 @@ module QuicksilverUI
           source = File.join(QuicksilverUI.stylesheets_path, "#{name}.css")
           next unless File.exist?(source)
 
-          copy_file source, Rails.root.join("app/assets/tailwind", "#{name}.css"), force: options["force"]
+          dest = Rails.root.join("app/assets/tailwind", "#{name}.css")
+          copy_file source, dest, force: options["force"]
+          add_css_import(name)
         end
       end
 
@@ -87,6 +98,40 @@ module QuicksilverUI
 
       def all_mixins
         all_components.flat_map { |name| QuicksilverUI::DEPENDENCIES.dig(name, :mixins) || [] }.uniq
+      end
+
+      def all_gems
+        all_components.flat_map { |name| QuicksilverUI::DEPENDENCIES.dig(name, :gems) || [] }.uniq
+      end
+
+      def gem_installed?(name)
+        Gem::Specification.find_all_by_name(name).any?
+      end
+
+      def add_css_import(name)
+        app_css = Rails.root.join("app/assets/tailwind/application.css")
+        import_line = "@import \"./#{name}.css\" layer(affordances);"
+
+        if File.exist?(app_css)
+          content = File.read(app_css)
+          return if content.include?(import_line)
+
+          # Insert after the last existing @import line
+          lines = content.lines
+          last_import_index = lines.rindex { |l| l.start_with?("@import") }
+
+          if last_import_index
+            lines.insert(last_import_index + 1, "#{import_line}\n")
+          else
+            lines.unshift("#{import_line}\n")
+          end
+
+          File.write(app_css, lines.join)
+        else
+          create_file app_css, "#{import_line}\n"
+        end
+
+        say "  Added import for #{name}.css to application.css", :green
       end
 
       def component_not_found?

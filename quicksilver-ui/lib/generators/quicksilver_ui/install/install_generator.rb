@@ -9,10 +9,10 @@ module QuicksilverUI
 
       source_root File.expand_path("templates", __dir__)
 
-      def check_dependencies
-        %w[phlex-rails literal tailwind_merge rails_icons].each do |gem_name|
+      def add_gems
+        %w[phlex-rails literal tailwind_merge].each do |gem_name|
           unless gem_installed?(gem_name)
-            say "Missing dependency: #{gem_name}. Adding to Gemfile.", :yellow
+            say "Adding #{gem_name} to Gemfile...", :yellow
             run "bundle add #{gem_name}"
           end
         end

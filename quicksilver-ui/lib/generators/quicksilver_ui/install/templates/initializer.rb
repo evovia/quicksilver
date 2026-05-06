@@ -1,3 +1,9 @@
+# frozen_string_literal: true
+
+module UI
+  extend Phlex::Kit
+end
+
 # Look for Phlex components in the views folder
 Rails.autoloaders.main.push_dir(
   Rails.root.join("app/views")
