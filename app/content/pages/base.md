@@ -1,6 +1,6 @@
 ---
 title: Base components
-position: 3
+position: 4
 ---
 
 When you install [Phlex](https://www.phlex.fun/), you get a very basic base class for the rest of your views and/or components to inherit from and where shared logic is placed.

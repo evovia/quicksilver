@@ -3,18 +3,52 @@ title: Quick Start
 position: 2
 ---
 
-Deviate from these instructions as you wish or want, but these dependencies have proven quite nice at our end.
+## Installation
+### Add the Gem
+```bash
+bundle add quicksilver_ui
+```
 
-## Install dependencies
-Add [Phlex](https://www.phlex.fun/introduction/getting-started.html)
-We have previously used ViewComponent, but there is just something neat about writing Ruby when you are building Ruby apps.
+### Install It
+Add all dependencies to your Gemfile.
 
-Add [Literal](https://literal.fun/docs/getting-started.html)
-Simple but powerful props with some Type checking. From the same people, who brought you Phlex. Or maybe the same guy? I'm not sure, if they're more than one.
+```bash
+bin/rails generate quicksilver_ui:install
+```
 
-Add [Tailwind](https://tailwindcss.com/docs/installation/framework-guides/ruby-on-rails)
-Add [TailwindMerge](https://github.com/gjtorikian/tailwind_merge/tree/v1.4.0#installation)
-You can skip these and substitute with another CSS framework. Or just build your own. I've heard that is the new thing.
+It also adds an initializer and [our base component](/components/base).
 
-## Check out our base component
-It's [right here](/components/base)
+Restart your server
+
+Now you can use [the built-in generators](/pages/generators).
+
+```bash
+$ bin/rails generate quicksilver_ui:component --help
+Usage:
+  rails generate quicksilver_ui:component NAME [options]
+
+Options:
+  [--skip-namespace]        # Skip namespace (affects only isolated engines)
+                            # Default: false
+  [--skip-collision-check]  # Skip collision check
+                            # Default: false
+  [--force]                 # Indicates when to generate force
+                            # Default: false
+
+Runtime options:
+  -p, [--pretend], [--no-pretend], [--skip-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet], [--skip-quiet]        # Suppress status output
+  -s, [--skip], [--no-skip], [--skip-skip]           # Skip files that already exist
+
+Generate a QuicksilverUI component into your application.
+
+Available components:
+
+  accordion
+  alert
+  avatar
+  badge
+  dropdown
+  icon
+  modal
+```
