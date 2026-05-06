@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "quicksilver_ui/version"
+require_relative "quicksilver_ui/dependencies"
 require_relative "quicksilver_ui/engine" if defined?(Rails::Engine)
 
 module QuicksilverUI

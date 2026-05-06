@@ -26,26 +26,6 @@ module QuicksilverUI
         template "base.rb", Rails.root.join("app/views/ui/base.rb")
       end
 
-      def copy_stylesheets
-        say "Copying Tailwind component stylesheets"
-
-        Dir.glob(File.join(QuicksilverUI.stylesheets_path, "*.css")).each do |file|
-          copy_file file, Rails.root.join("app/assets/tailwind", File.basename(file))
-        end
-      end
-
-      def copy_javascript
-        say "Copying Stimulus controllers"
-
-        Dir.glob(File.join(QuicksilverUI.javascript_controllers_path, "*.js")).each do |file|
-          copy_file file, Rails.root.join("app/javascript/controllers", File.basename(file))
-        end
-
-        Dir.glob(File.join(QuicksilverUI.javascript_mixins_path, "*.js")).each do |file|
-          copy_file file, Rails.root.join("app/javascript/mixins", File.basename(file))
-        end
-      end
-
       def done
         say ""
         say "Quicksilver UI installed successfully!", :green

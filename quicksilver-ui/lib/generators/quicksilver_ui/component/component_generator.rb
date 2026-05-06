@@ -25,18 +25,69 @@ module QuicksilverUI
       end
 
       def copy_component_files
-        component_file_paths.each do |file_path|
-          relative = Pathname.new(file_path).relative_path_from(self.class.source_root)
-          copy_file file_path, Rails.root.join("app/views/ui", relative), force: options["force"]
+        all_components.each do |name|
+          paths = file_paths_for(name)
+          paths.each do |file_path|
+            relative = Pathname.new(file_path).relative_path_from(self.class.source_root)
+            copy_file file_path, Rails.root.join("app/views/ui", relative), force: options["force"]
+          end
+        end
+      end
+
+      def copy_stylesheets
+        all_stylesheets.each do |name|
+          source = File.join(QuicksilverUI.stylesheets_path, "#{name}.css")
+          next unless File.exist?(source)
+
+          copy_file source, Rails.root.join("app/assets/tailwind", "#{name}.css"), force: options["force"]
+        end
+      end
+
+      def copy_controllers
+        all_controllers.each do |name|
+          source = File.join(QuicksilverUI.javascript_controllers_path, "#{name}_controller.js")
+          next unless File.exist?(source)
+
+          copy_file source, Rails.root.join("app/javascript/controllers", "#{name}_controller.js"), force: options["force"]
+        end
+      end
+
+      def copy_mixins
+        all_mixins.each do |name|
+          source = File.join(QuicksilverUI.javascript_mixins_path, "#{name}.js")
+          next unless File.exist?(source)
+
+          copy_file source, Rails.root.join("app/javascript/mixins", "#{name}.js"), force: options["force"]
         end
       end
 
       def done
         say ""
         say "#{component_name} component generated!", :green
+
+        deps = all_components - [component_folder_name]
+        if deps.any?
+          say "  Dependencies copied: #{deps.join(", ")}", :cyan
+        end
       end
 
       private
+
+      def all_components
+        @all_components ||= QuicksilverUI.resolve_dependencies(component_folder_name)
+      end
+
+      def all_stylesheets
+        all_components.flat_map { |name| QuicksilverUI::DEPENDENCIES.dig(name, :stylesheets) || [] }.uniq
+      end
+
+      def all_controllers
+        all_components.flat_map { |name| QuicksilverUI::DEPENDENCIES.dig(name, :controllers) || [] }.uniq
+      end
+
+      def all_mixins
+        all_components.flat_map { |name| QuicksilverUI::DEPENDENCIES.dig(name, :mixins) || [] }.uniq
+      end
 
       def component_not_found?
         !File.exist?(component_file_path) && !Dir.exist?(component_folder_path)
@@ -46,29 +97,21 @@ module QuicksilverUI
         component_name.underscore
       end
 
-      # Single-file component (e.g., alert.rb)
       def component_file_path
         File.join(self.class.source_root, "#{component_folder_name}.rb")
       end
 
-      # Multi-file component folder (e.g., dropdown/)
       def component_folder_path
         File.join(self.class.source_root, component_folder_name)
       end
 
-      def component_file_paths
+      def file_paths_for(name)
         paths = []
+        file = File.join(self.class.source_root, "#{name}.rb")
+        folder = File.join(self.class.source_root, name)
 
-        # Main component file
-        if File.exist?(component_file_path)
-          paths << component_file_path
-        end
-
-        # Nested files in component folder
-        if Dir.exist?(component_folder_path)
-          paths.concat Dir.glob(File.join(component_folder_path, "**/*.rb"))
-        end
-
+        paths << file if File.exist?(file)
+        paths.concat Dir.glob(File.join(folder, "**/*.rb")) if Dir.exist?(folder)
         paths
       end
 
