@@ -9,6 +9,28 @@ module QuicksilverUI
 
       source_root QuicksilverUI.stylesheets_path.to_s
 
+      def self.banner
+        "rails generate quicksilver_ui:affordance NAME [options]"
+      end
+
+      desc <<~DESC
+        Generate a QuicksilverUI affordance stylesheet into your application.
+
+        Available affordances:
+      DESC
+
+      def self.desc(description = nil)
+        return super if description
+
+        affordances = Dir.glob(File.join(QuicksilverUI.stylesheets_path, "*.css"))
+          .map { |f| File.basename(f, ".css") }
+          .sort
+          .map { |c| "  #{c}" }
+          .join("\n")
+
+        "#{super}\n#{affordances}"
+      end
+
       argument :affordance_name, type: :string, required: true
       class_option :force, type: :boolean, default: false
 

@@ -9,6 +9,29 @@ module QuicksilverUI
 
       source_root QuicksilverUI.form_path.to_s
 
+      def self.banner
+        "rails generate quicksilver_ui:form NAME [options]"
+      end
+
+      desc <<~DESC
+        Generate a QuicksilverUI form component into your application.
+
+        Available form components:
+      DESC
+
+      def self.desc(description = nil)
+        return super if description
+
+        components = Dir.glob(File.join(QuicksilverUI.form_path, "*.rb"))
+          .map { |f| File.basename(f, ".rb") }
+          .reject { |n| n == "base_tag" }
+          .sort
+          .map { |c| "  #{c}" }
+          .join("\n")
+
+        "#{super}\n#{components}"
+      end
+
       argument :form_component_name, type: :string, required: true
       class_option :force, type: :boolean, default: false
 
