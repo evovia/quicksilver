@@ -36,4 +36,12 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
   def submit(value = nil, options = {})
     super(value, options.with_defaults(class: "ui-button ui-button-primary"))
   end
+
+  def checkbox(method, options = {})
+    render Form::Checkbox.new(form: self, method:, **options)
+  end
+
+  def toggle(method, options = {})
+    render Form::Toggle.new(form: self, method:, **options)
+  end
 end

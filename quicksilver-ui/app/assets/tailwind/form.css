@@ -6,6 +6,10 @@
   }
 }
 
+.ui-form-checkbox {
+  @apply size-4 appearance-none border border-gray-800 bg-white checked:bg-gray-900 indeterminate:border-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 focus:outline-gray-900 disabled:border-gray-500 hover:disabled:border-gray-500 disabled:bg-gray-400 disabled:checked:bg-gray-400;
+}
+
 .ui-form-label {
   @apply font-medium text-sm text-gray-900;
 }

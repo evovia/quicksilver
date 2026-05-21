@@ -1,6 +1,7 @@
 @layer base, affordances, utilities;
 @import "tailwindcss";
 @import "../builds/tailwind/quicksilver_ui.css";
+@plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
 @theme {
