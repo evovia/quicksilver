@@ -50,6 +50,13 @@ module QuicksilverUI
       controllers: %w[modal],
       mixins: [],
       gems: []
+    },
+    "toast" => {
+      components: %w[icon],
+      stylesheets: [],
+      controllers: %w[dismissable],
+      mixins: [],
+      gems: []
     }
   }.freeze
 
