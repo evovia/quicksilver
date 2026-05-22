@@ -44,4 +44,8 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
   def toggle(method, options = {})
     render Form::Toggle.new(form: self, method:, **options)
   end
+
+  def radio_button(method, tag_value, options = {})
+    render Form::RadioButton.new(form: self, tag_value:, method:, **options)
+  end
 end
