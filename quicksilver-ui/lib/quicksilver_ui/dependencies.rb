@@ -95,6 +95,63 @@ module QuicksilverUI
       form_components: [],
       stylesheets: %w[form],
       gems: []
+    },
+    "checkbox" => {
+      form_components: %w[base_tag],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "date_field" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "email_field" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "file_field" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "password_field" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "phone_field" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "radio_button" => {
+      form_components: %w[base_tag],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "search_field" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "select" => {
+      form_components: %w[base_tag],
+      stylesheets: %w[form],
+      gems: []
+    },
+    "textarea" => {
+      form_components: %w[input],
+      stylesheets: %w[form],
+      controllers: %w[autogrow],
+      gems: []
+    },
+    "toggle" => {
+      form_components: %w[checkbox],
+      stylesheets: %w[form],
+      components: %w[icon],
+      gems: []
     }
   }.freeze
 
