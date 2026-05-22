@@ -59,6 +59,11 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
     )
   end
 
+  def textarea(method, options = {})
+    render Form::Textarea.new(form: self, method:, **options)
+  end
+  alias_method :text_area, :textarea
+
   def label(method, text = nil, options = {}, &block)
     render Form::Label.new(form: self, method:, text:, **options)
   end
