@@ -45,6 +45,20 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
     render Form::SearchField.new(form: self, method:, **options)
   end
 
+  def select(method, choices = nil, options = {}, html_options = {})
+    render Form::Select.new(
+      form: self,
+      method:,
+      choices:,
+      selected: options[:selected],
+      include_blank: options.fetch(:include_blank, true),
+      prompt: options[:prompt],
+      disabled: options[:disabled],
+      include_hidden: options.fetch(:include_hidden, true),
+      html_options:
+    )
+  end
+
   def label(method, text = nil, options = {}, &block)
     render Form::Label.new(form: self, method:, text:, **options)
   end
