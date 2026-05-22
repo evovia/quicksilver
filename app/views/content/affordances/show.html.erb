@@ -9,6 +9,15 @@
   </div>
 
   <section class="prose">
-    <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
+    <% if @resource.content.present? %>
+      <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
+    <% end %>
+
+    <%= render_previews(@resource.slug, variant: :affordance) %>
+
+    <% if (implementation = render_implementation(@resource.slug, type: :affordance)) %>
+      <h2>Implementation</h2>
+      <%= implementation %>
+    <% end %>
   </section>
 </article>
