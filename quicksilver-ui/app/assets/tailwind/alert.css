@@ -7,7 +7,7 @@
 }
 
 .ui-alert-brand {
-  @apply text-brand-turqoise-950 ring-brand-turqoise-200 bg-brand-turqoise-100;
+  @apply text-primary-950 ring-primary-200 bg-primary-100;
 }
 
 .ui-alert-success {

@@ -28,7 +28,7 @@ class UI::Badge < UI::Base
   def icon_classes
     class_names(
       "text-gray-700": variant.neutral?,
-      "text-brand-turqoise-700": variant.brand?,
+      "text-primary-700": variant.brand?,
       "text-red-400": variant.danger?
     )
   end

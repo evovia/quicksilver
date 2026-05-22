@@ -29,7 +29,7 @@ class UI::Avatar < UI::Base
   end
 
   def default_classes
-    "inline-flex size-6 items-center justify-center rounded-full bg-brand-turqoise-100 border border-brand-turqoise-700"
+    "inline-flex size-6 items-center justify-center rounded-full bg-primary-100 border border-primary-700"
   end
 
   def size_classes
@@ -45,7 +45,7 @@ class UI::Avatar < UI::Base
 
   def text_classes
     class_names(
-      "font-medium text-brand-turqoise-900 uppercase",
+      "font-medium text-primary-900 uppercase",
       "text-xs": size.xs?,
       "text-sm": size.sm?,
       "text-base": size.md?,

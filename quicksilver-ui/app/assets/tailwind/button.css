@@ -3,11 +3,11 @@
 }
 
 .ui-button-primary {
-  @apply text-white border-brand-turqoise-500 bg-brand-turqoise-500 hover:bg-brand-turqoise-700 hover:border-brand-turqoise-700 focus-visible:outline-brand-turqoise-500;
+  @apply text-white border-primary-500 bg-primary-500 hover:bg-primary-700 hover:border-primary-700 focus-visible:outline-primary-500;
 }
 
 .ui-button-secondary {
-  @apply text-white border-brand-green-700 bg-brand-green-700 hover:bg-brand-green-900 hover:border-brand-green-900 focus-visible:outline-brand-green-500;
+  @apply text-white border-secondary-700 bg-secondary-700 hover:bg-secondary-900 hover:border-secondary-900 focus-visible:outline-secondary-500;
 }
 
 .ui-button-warning {
