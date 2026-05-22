@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Form::BaseTag < UI::Base
-  ALLOWED_OPTIONS = [:value, :readonly, :disabled, :name, :autofocus, :data].freeze
+  ALLOWED_OPTIONS = [:readonly, :disabled, :name, :autofocus, :data].freeze
 
   class << self
     def allowed_options
@@ -11,6 +11,7 @@ class Form::BaseTag < UI::Base
 
   prop :form, AppFormBuilder, reader: :private
   prop :method, _Union(Symbol, String), reader: :private
+  prop :value, _Any?, reader: :private
   prop :options, Hash, :**, reader: :private
 
   def id
@@ -22,6 +23,7 @@ class Form::BaseTag < UI::Base
   end
 
   def value
+    return @value if @value
     return if form.object.blank?
     return unless form.object.respond_to?(method)
 
