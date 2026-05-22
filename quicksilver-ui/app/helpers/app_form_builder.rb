@@ -41,6 +41,10 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
     render Form::PasswordField.new(form: self, method:, **options)
   end
 
+  def search_field(method, options = {})
+    render Form::SearchField.new(form: self, method:, **options)
+  end
+
   def label(method, text = nil, options = {}, &block)
     render Form::Label.new(form: self, method:, text:, **options)
   end
