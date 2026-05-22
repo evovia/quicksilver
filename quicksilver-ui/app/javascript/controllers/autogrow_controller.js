@@ -3,7 +3,6 @@ import { useResize } from "stimulus-use"
 
 export default class extends Controller {
   connect() {
-    console.log("hello!")
     useResize(this, { element: this.element })
     this.resize()
   }
