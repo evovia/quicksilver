@@ -45,17 +45,3 @@ input value: "Click me!",
 </div>
 
 It all looks the same and it is easy to reason about.
-
-## Examples
-
-<%= erbify do %>
-  <%= render_previews("button", variant: :affordance) %>
-<% end %>
-
-## Implementation
-
-<%= erbify do %>
-  ```css
-  <%= render_affordance_implementation("button") %>
-  ```
-<% end %>

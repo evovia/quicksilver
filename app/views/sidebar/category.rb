@@ -23,7 +23,7 @@ class Sidebar::Category < UI::Base
       link_to(
         item.public_send(text_method),
         item,
-        class: class_names("ui-link", "font-medium text-brand-turqoise-500": current_page?(item))
+        class: class_names("ui-link", "font-medium text-primary-500": current_page?(item))
       )
     end
   end

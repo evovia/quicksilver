@@ -47,7 +47,7 @@ class UI::Accordion < UI::Base
 
   def summary_classes
     class_names(
-      "flex cursor-pointer list-none items-center justify-between text-brand-turqoise-900",
+      "flex cursor-pointer list-none items-center justify-between text-primary-900",
       "py-2 px-3 text-lg font-medium": size.lg?,
       "py-1 px-2 text-sm": size.md?,
       "py-1 px-1.5 text-sm": size.sm?

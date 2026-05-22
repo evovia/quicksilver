@@ -4,7 +4,20 @@
     <p class="font-medium"><%= @resource.description %></p>
   </hgroup>
 
+  <div class="not-prose mb-6">
+    <%= render CopyCommand.new(command: "bin/rails g quicksilver_ui:component #{@resource.name}") %>
+  </div>
+
   <div class="prose">
-    <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
+    <% if @resource.content.present? %>
+      <%= markdownify @resource.content, process: [CopyableCodeProcessor] %>
+    <% end %>
+
+    <%= render_previews(@resource.slug) %>
+
+    <% if (implementation = render_implementation(@resource.slug, type: :component)) %>
+      <h2>Implementation</h2>
+      <%= implementation %>
+    <% end %>
   </div>
 </article>

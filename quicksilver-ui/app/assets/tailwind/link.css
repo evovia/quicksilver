@@ -1,0 +1,23 @@
+.ui-link {
+  @apply underline text-sm text-gray-900 hover:text-primary-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500;
+}
+
+.ui-link-danger {
+  @apply text-tertiary-600 hover:text-tertiary-700 active:text-tertiary-800 focus-visible:outline-tertiary-600;
+}
+
+.ui-link-primary {
+  @apply text-primary-600 hover:text-primary-700 active:text-primary-800 focus-visible:outline-primary-500;
+}
+
+.ui-link-lg {
+  @apply text-base;
+}
+
+.ui-link-md {
+  @apply text-sm;
+}
+
+.ui-link-sm {
+  @apply text-xs;
+}
