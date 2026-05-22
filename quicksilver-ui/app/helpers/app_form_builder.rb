@@ -33,6 +33,10 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
     render Form::FileField.new(form: self, method:, **options)
   end
 
+  def password_field(method, options = {})
+    render Form::PasswordField.new(form: self, method:, **options)
+  end
+
   def label(method, text = nil, options = {}, &block)
     render Form::Label.new(form: self, method:, text:, **options)
   end
