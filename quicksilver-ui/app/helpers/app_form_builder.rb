@@ -91,4 +91,8 @@ class AppFormBuilder < ActionView::Helpers::FormBuilder
   def radio_button(method, tag_value, options = {})
     render Form::RadioButton.new(form: self, tag_value:, method:, **options)
   end
+
+  def combobox(method, choices, options = {})
+    render Form::Combobox.new(form: self, method:, choices:, **options)
+  end
 end
