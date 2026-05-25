@@ -43,7 +43,7 @@ class Form::Combobox < Form::BaseTag
     }, class: "relative group" do
       fieldset(class: classes, data:) do
         input(
-          id:,
+          id: input_id,
           type: :search,
           role: "combobox",
           "aria-expanded": "false",
@@ -81,6 +81,8 @@ class Form::Combobox < Form::BaseTag
   def default_classes
     "flex flex-col-reverse overflow-hidden relative rounded outline outline-gray-400 bg-white hover:outline-gray-900 focus-within:outline-gray-900 has-disabled:hover:outline-gray-400 focus-within:outline-2 data-invalid:outline-red-600 data-invalid:focus-within:outline-gray-900 data-invalid:hover:outline-gray-900"
   end
+
+  def input_id = @input_id ||= "#{name}_#{Random.uuid}"
 
   def default_options
     {id:, name:, data: {controller: "combobox"}}
