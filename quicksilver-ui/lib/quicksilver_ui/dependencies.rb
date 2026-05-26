@@ -51,6 +51,13 @@ module QuicksilverUI
       mixins: [],
       gems: []
     },
+    "tag" => {
+      components: %w[icon],
+      stylesheets: [],
+      controllers: %w[dismissable],
+      mixins: [],
+      gems: []
+    },
     "toast" => {
       components: %w[icon],
       stylesheets: [],
@@ -151,6 +158,14 @@ module QuicksilverUI
       form_components: %w[checkbox],
       stylesheets: %w[form],
       components: %w[icon],
+      gems: []
+    },
+    "combobox" => {
+      form_components: %w[base_tag],
+      stylesheets: %w[form],
+      components: %w[tag],
+      controllers: %w[combobox],
+      mixins: %w[use_floating_ui use_keyboard_navigation],
       gems: []
     }
   }.freeze

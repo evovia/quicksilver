@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "lib/quicksilver_ui/version"
+
 Gem::Specification.new do |spec|
   spec.name = "quicksilver_ui"
-  spec.version = "0.1.0"
+  spec.version = QuicksilverUI::VERSION
   spec.authors = ["Evovia"]
   spec.summary = "Quicksilver UI component library for Rails"
   spec.description = "A collection of Phlex-based UI components with Rails generators for easy installation."
