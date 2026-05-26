@@ -1,0 +1,12 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger StaticHost build
+        run: curl -fX POST https://builder.statichost.eu/${{ secrets.STATICHOST_SITE_NAME }} --no-progress-meter
