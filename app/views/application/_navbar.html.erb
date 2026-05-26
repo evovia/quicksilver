@@ -1,11 +1,26 @@
 <nav class="w-full flex justify-between items-center bg-gray-950">
-  <%= link_to root_path, class: "ml-4 py-2 w-52" do %>
-    <h1 class="text-3xl font-bold inline-flex items-center gap-2 text-white">
-      <span class="size-8 bg-white rounded-full inline-flex items-center justify-center">
-        <%= icon("beaker", variant: :solid, class: "size-4 text-gray-900 -rotate-12") %>
-      </span>
+  <div class="flex items-center">
+    <button
+      data-action="sidebar#open"
+      class="ml-2 p-2 text-white md:hidden"
+      aria-label="Open navigation"
+    >
+      <%= icon("bars-3", variant: :solid, class: "size-6") %>
+    </button>
 
-      <%= Perron.configuration.site_name %>
-    </h1>
-  <% end %>
+    <%= link_to root_path, class: "ml-4 py-2 w-52" do %>
+      <h1 class="text-3xl font-bold inline-flex items-center gap-2 text-white">
+        <span
+          class="
+            size-8 bg-white rounded-full inline-flex items-center
+            justify-center
+          "
+        >
+          <%= icon("beaker", variant: :solid, class: "size-4 text-gray-900 -rotate-12") %>
+        </span>
+
+        <%= Perron.configuration.site_name %>
+      </h1>
+    <% end %>
+  </div>
 </nav>
