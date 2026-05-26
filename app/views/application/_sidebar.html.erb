@@ -6,6 +6,16 @@
     "
   >
     <div class="space-y-4 overflow-y-scroll">
+      <div class="flex justify-end md:hidden">
+        <button
+          data-action="sidebar#close"
+          aria-label="Close navigation"
+          class="p-1 text-gray-500 hover:text-gray-700"
+        >
+          <%= icon("x-mark", variant: :solid, class: "size-5") %>
+        </button>
+      </div>
+
       <%= render Sidebar::Category.new(
         heading: "Getting started",
         items: Content::Page.all.reject(&:root?).sort_by(&:position)

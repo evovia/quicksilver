@@ -25,11 +25,25 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="h-full flex flex-col">
+  <body class="h-full flex flex-col" data-controller="sidebar">
     <%= render "navbar" %>
 
     <div class="flex-1 flex min-h-0">
-      <%= render "sidebar" %>
+      <div
+        data-sidebar-target="backdrop"
+        data-action="click->sidebar#close"
+        class="fixed inset-0 bg-black/50 z-40 hidden"
+      ></div>
+
+      <div
+        data-sidebar-target="panel"
+        class="
+          fixed inset-y-0 left-0 z-50 -translate-x-full transition-transform duration-300 bg-white
+          md:static md:translate-x-0
+        "
+      >
+        <%= render "sidebar" %>
+      </div>
 
       <main class="flex-1 overflow-auto p-5">
         <%= yield %>
