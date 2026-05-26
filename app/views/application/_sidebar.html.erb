@@ -5,7 +5,7 @@
       justify-between h-full
     "
   >
-    <div class="space-y-4">
+    <div class="space-y-4 overflow-y-scroll">
       <%= render Sidebar::Category.new(
         heading: "Getting started",
         items: Content::Page.all.reject(&:root?).sort_by(&:position)
@@ -28,7 +28,7 @@
       ) %>
     </div>
 
-    <div>
+    <div class="shrink-0 mt-4">
       <%= link_to "https://evovia.com" do %>
         <%= image_tag "logo_green.svg", alt: "Evovia logo" %>
       <% end %>
